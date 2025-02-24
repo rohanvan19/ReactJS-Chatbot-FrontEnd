@@ -31,6 +31,11 @@ npm start
 ```
 The application will run at `http://localhost:3000/` by default.
 
+## Screenshot
+Here is a preview of the chatbot interface:
+
+![Chatbot Output](https://github.com/rohanvan19/ReactJS-Chatbot-FrontEnd/blob/main/output.png)
+
 ## Usage
 1. Open the app in a browser.
 2. Type a message in the input box.
