@@ -1,0 +1,240 @@
+/* Import Open Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* Global Styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); */
+  background: white;
+  padding: 0;
+}
+
+/* Chat container */
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 100vw;
+  max-width: 1000px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+/* Chat header */
+.chat-header {
+  /* background: linear-gradient(to bottom, #9fc4ff, #7cd6ff); */
+  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb); 
+  color: rgb(49, 49, 49);
+  text-align: center;
+  padding: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Messages container */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* General message styling */
+.message {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  max-width: 75%;
+  word-wrap: break-word;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600; /* Semi-bold text for both user and bot */
+}
+
+/* User message styling */
+.user {
+  background: #f1f1f1;
+  color: #333;
+  align-self: flex-end;
+  border-radius: 18px 18px 4px 18px; /* Smooth rounded corners */
+  padding: 10px 15px;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+/* Bot message styling */
+.bot {
+  background: #f1f1f1;
+  color: #333;
+  align-self: flex-start;
+  border-radius: 18px 18px 18px 4px; /* Smooth rounded corners */
+  padding: 12px 15px;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+/* Timestamp styling */
+small {
+  font-weight: 400; /* Normal weight for timestamps */
+  color: gray;
+  margin-top: 0px; /* Reduced from default (usually 4px or more) */
+  display: block; /* Ensures timestamp stays below the text */
+  text-align: right;  /* Aligns the text to the right */
+}
+
+/* Chat input container - Ensures alignment */
+.chat-input {
+  display: flex;
+  align-items: center; /* Ensures vertical alignment */
+  justify-content: space-between; /* Keeps input and button aligned */
+  padding: 40px;
+  background: linear-gradient(to bottom, #c2e9fb, #a1c4fd); 
+  border-top: 1px solid #ddd;
+  gap: 10px; /* Adds space between input and button */
+}
+
+/* Input field */
+.chat-input input {
+  flex: 1; /* Takes up remaining space */
+  padding: 12px 15px;
+  border: 1px solid #000000;
+  border-radius: 25px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Input focus effect */
+.chat-input input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0px 6px 12px rgba(74, 144, 226, 0.3);
+  transform: scale(1.02);
+}
+
+/* Send button */
+.chat-input button {
+  padding: 12px 18px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background: linear-gradient(45deg, #91c3fd, #4271ff);
+  color: white;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 10px; /* Adds extra space if needed */
+}
+
+/* Hover effect */
+.chat-input button:hover {
+  background: linear-gradient(45deg, #91c3fd, #4271ff);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active effect */
+.chat-input button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide scrollbar arrows */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Style the scrollbar */
+::-webkit-scrollbar {
+  width: 8px;  /* Set width for vertical scrollbar */
+  height: 8px; /* Set height for horizontal scrollbar */
+}
+
+/* Style the scrollbar track (the background area) */
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 10px;  /* Make the track rounded */
+}
+
+/* Style the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #c2e9fb;
+  border-radius: 10px;  /* Make the thumb rounded */
+}
+
+/* Hover effect for the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a1c4fd;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Ensures no unwanted scrolling */
+  }
+
+  .chat-header {
+    padding: 15px; /* Reduce padding */
+    font-size: 16px; /* Decrease font size */
+  }
+
+  .chat-page {
+    height: 100vh; /* Full screen height */
+    width: 100vw;
+    border-radius: 0; /* Removes any rounded corners to fit exactly */
+  }
+
+  .chat-input {
+    flex-direction: row; /* Keep input and button in a single row */
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    gap: 8px;
+  }
+
+  .chat-input input {
+    flex: 1; /* Takes up remaining space */
+    width: auto;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .chat-input button {
+    width: auto; /* Prevents full-width button */
+    min-width: 80px; /* Ensures button does not shrink too much */
+    font-size: 14px;
+    padding: 10px 15px;
+    margin-left: 5px; /* Small left margin to separate from input */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .chat-input {
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .chat-input input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .chat-input button {
+    font-size: 13px;
+    padding: 8px 12px;
+    min-width: 75px;
+    margin-left: 5px; /* Keeps space between input and button */
+  }
+}
